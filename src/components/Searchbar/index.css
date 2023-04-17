@@ -1,0 +1,19 @@
+form.searchbar {
+    height: 4rem;
+    display: flex;
+}
+
+input.search-input {
+    width: 53rem;
+    height: 100%;
+    padding-inline: 2rem;
+    border-radius: .5rem 0 0 .5rem;
+    
+}
+
+button.search-btn {
+    padding: 1rem 2.8rem;
+    height: 100%;
+    border-radius: 0 .5rem .5rem 0;
+    background-color: #EB6F4C;
+}

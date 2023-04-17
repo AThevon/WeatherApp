@@ -1,0 +1,18 @@
+section.wrapper-now {
+    position: relative;
+    color: #fff;
+}
+
+p.now {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ul.now-temp {
+    height: 18rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10rem;
+}

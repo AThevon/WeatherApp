@@ -1,0 +1,28 @@
+section.wrapper {
+    background-color: #fff;
+    height: 40rem;
+}
+
+ul.all-temp {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10rem;
+}
+
+li.main-temp {
+    text-align: start;
+}
+
+li.main-temp p {
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+
+li.main-temp p.temp {
+    font-size: 4.6rem;
+    font-weight: 700;
+}
+

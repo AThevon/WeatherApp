@@ -11,3 +11,156 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  width: 100vw;
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove the list style by default */
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background-color: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS Debugger */
+/* * {
+	outline: 1px solid red;
+} */
+
+/* HTML Debugger */
+img:not([alt]) {
+  border: 10px solid red;
+}
+
+/* Set root font-size @10px equivalent */
+html {
+  font-size: 62.5%;
+}
+
+/* Remove focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Set core body defaults */
+body {
+  font-size: 1.6rem;
+}
+
+/* Set cursor pointer */
+label[for],
+button,
+input[type="submit"],
+select {
+  cursor: pointer;
+}
+
+/* Remove font style on address */
+address {
+  font-style: normal;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Image replacement technique 2012 H5BP  - https://css-tricks.com/the-image-replacement-museum/ */
+.ir {
+  font: 0/0 a;
+  color: transparent;
+  border: 0;
+  text-shadow: none;
+}
+
+/* Print external URLs */
+@media print {
+  a[href]:not([href^='#'])::after {
+    content: '(' attr(href)')';
+  }
+}

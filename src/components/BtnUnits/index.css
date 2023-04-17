@@ -1,0 +1,7 @@
+.btn-units button {
+    border-radius: .5rem;
+    width: 17rem;
+    padding-block: 1rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
