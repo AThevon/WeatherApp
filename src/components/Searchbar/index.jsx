@@ -2,12 +2,11 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-const Searchbar = ({ onSearch, datas }) => {
-    console.log(datas);
+const Searchbar = ({ onSearch, data }) => {
     return (
         <>
         <form className="searchbar">
-            <input className='search-input' type="text" placeholder="Search city..." onChange={onSearch} />
+            <input className='search-input' type="text" placeholder="Search city..." onChange={onSearch} value={data} />
             <button className='search-btn'>
                 <FontAwesomeIcon icon={faMagnifyingGlass} style={{height: '18px', color:"#fff"}} />
             </button>
