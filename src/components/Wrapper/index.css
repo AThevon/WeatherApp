@@ -1,10 +1,12 @@
 section.wrapper {
     background-color: #fff;
     height: 40rem;
+    margin: auto;
+
 }
 
 ul.all-temp {
-    margin: auto;
+    padding-top: 11rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,9 +22,37 @@ li.main-temp p {
     font-size: 1.8rem;
 }
 
-
-li.main-temp p.temp {
-    font-size: 4.6rem;
-    font-weight: 700;
+li.main-temp h2 {
+    font-weight: 400;
+    font-size: 3.2rem;
 }
 
+li.main-temp p {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+
+li.main-temp p.temp {
+    font-size: 8.6rem;
+    font-weight: 500;
+}
+
+
+li.map-datas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+li.map-datas p {
+    font-size: 2.4rem;
+}
+
+
+li.map-datas img {
+    width: 8rem;
+    height: 8rem;
+}

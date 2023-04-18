@@ -1,13 +1,16 @@
 section.wrapper-now {
     position: relative;
     color: #fff;
+    height: 18rem;
 }
 
 p.now {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 1rem;
+    left: 1rem;
+    font-weight: 700;
 }
+
 
 ul.now-temp {
     height: 18rem;
@@ -15,4 +18,14 @@ ul.now-temp {
     justify-content: space-between;
     align-items: center;
     padding-inline: 10rem;
+}
+
+p {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p.value {
+    font-weight: 700;
+    font-size: 2.4rem;
 }

@@ -1,12 +1,15 @@
 import './index.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-const Searchbar = ({ onSearch, data }) => {
+const Searchbar = ({ value, onChange, onSubmit}) => {
+    const handleChange = (e) => {
+        onChange(e.target.value);
+    };
     return (
         <>
-        <form className="searchbar">
-            <input className='search-input' type="text" placeholder="Search city..." onChange={onSearch} value={data} />
+        <form className="searchbar" onSubmit={onSubmit}>
+            <input className='search-input' type="text" placeholder="Search city..." value={value} onChange={handleChange} />
             <button className='search-btn'>
                 <FontAwesomeIcon icon={faMagnifyingGlass} style={{height: '18px', color:"#fff"}} />
             </button>

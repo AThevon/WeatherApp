@@ -1,39 +1,20 @@
 import './index.css';
-import { useState, useEffect } from 'react';
-import { fetchApi } from '../../api/fetchApi';
-// import WrapperNow from '../WrapperNow';
-// import Searchbar from '../Searchbar';
+import WrapperNow from '../WrapperNow';
+import WrapperWeekly from '../WrapperWeekly';
 
-const Wrapper = () => {
-    const [datas, setDatas] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const result = await fetchApi('Paris');
-                setDatas(result);
-            } catch (err) {
-                setError(err);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
-
-    console.log(datas);
-
+const Wrapper = ( { datas, isLoading, error, metrics } ) => {
+    
 
     const date = new Date();
     const options = { weekday: 'long', hour: 'numeric', hour12: false, minute: 'numeric' };
     const formattedDate = date.toLocaleString('en-US', options);
 
+    const getOnlyHours = (dt) => {
+        const timeString = dt.split(" ")[1].substring(0, 5);
+        return timeString;
+    }
 
-    // const iconWeather = (imgCode) => `http://openweathermap.org/img/w/${imgCode}.png`;
+    const iconWeather = (imgCode) => `http://openweathermap.org/img/w/${imgCode}.png`;
 
     return (
         <>
@@ -43,28 +24,25 @@ const Wrapper = () => {
                         datas && (
                             <ul className='all-temp'>
                                 <li className='main-temp'>
-                                    <p>{datas.name}</p>
+                                    <h2>{datas.city.name}</h2>
                                     <p>{formattedDate}</p>
-                                    <p className='temp'>
-                                        {datas.main.temp}</p>
+                                    <p className='temp'>{parseInt(datas.list[0].main.temp)} {metrics ?'°C' : '°F'}</p>
                                 </li>
-                                {/* {datas.hourly.map((hour, index) => (
-                                    <li key={index}>
-                                    <p>{new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                                    <p>Chance of Rain: {hour.pop}%</p>
-                                    </li>
-                                ))} */}
-                                <li>
-                                    {/* <img src={iconWeather(datas.weather.icon)} alt="" /> */}
-                                    <p>8h</p>
-                                    <p>nuageicon</p>
-                                    <p>13°C</p>
-                                </li>
-                                
+                                {datas.list.slice(0, 4).map((data, index) => {
+                                    return (
+                                        <li key={index} className='map-datas'>
+                                            <p>{getOnlyHours(data.dt_txt)}</p>
+                                            <img src={iconWeather(datas.list[index].weather[0].icon)} alt="" />
+                                            <p>{parseInt(data.main.temp)} {metrics ?'°C' : '°F'}</p>
+                                        </li>
+                                    )
+                                })}
+
                             </ul>
                         )}
             </section>
-            {/* <WrapperNow data={datas} /> */}
+            { datas && <WrapperNow metrics={metrics} data={datas.list[0]} />}
+            { datas && <WrapperWeekly datas={datas}/>}
         </>
     )
 }

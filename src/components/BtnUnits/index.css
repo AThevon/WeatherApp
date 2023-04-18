@@ -1,7 +1,50 @@
 .btn-units button {
+    position: relative;
     border-radius: .5rem;
     width: 17rem;
     padding-block: 1rem;
     font-weight: 300;
     font-size: 1.8rem;
+    overflow: hidden;
+    transition: .3s;
+    background-color: transparent;
+    border: 2px solid rgb(176, 176, 176);
+    color: #fff;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+button.imperial {
+    color: #f9f9f9;
+}
+
+button.metrics {
+    color: #202020;
+}
+
+button.imperial span {
+    color: #202020;
+}
+
+button.metrics span {
+    color: #f9f9f9;
+}
+
+
+.btn-units button::before {
+    content: "";
+    transition: .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    transform: translate(-28%, -30%) rotate(-80deg);
+    background-color: #fff;
+    z-index: -1;
+}
+
+
+.btn-units button.imperial::before {
+    transform: translate(30%, -30%) rotate(-80deg);
 }

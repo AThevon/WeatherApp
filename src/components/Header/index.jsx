@@ -3,12 +3,14 @@ import Logo from '../Logo';
 import Searchbar from '../Searchbar';
 import BtnUnits from '../BtnUnits';
 
-const Header = () => {
+const Header = ({ metrics, setMetrics, value, onChange, onSubmit }) => {
     return (
         <header className="header">
             <Logo />
-            <Searchbar />
-            <BtnUnits />
+            <Searchbar value={value} onChange={onChange} onSubmit={onSubmit}/>
+            <BtnUnits
+                metrics={metrics ? 'metrics' : 'imperial'}
+                handleClick={() => setMetrics(metrics ? false : true)} />
         </header>
     );
 }

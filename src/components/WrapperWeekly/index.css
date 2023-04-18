@@ -1,0 +1,27 @@
+section.wrapper-weekly {
+    background-color: #fff;
+    padding: 8.5rem 11.5rem;
+}
+
+.main-weekly,
+.weekly-stats {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+}
+
+.main-weekly li,
+.weekly-stats li {
+    border-bottom: 1px solid #555555;
+}
+
+.main-weekly li {
+    text-transform: uppercase;
+}
+
+.weekly-stats li {
+    padding-block: 4rem;
+}
+
+p.day {
+    text-align: start;
+}

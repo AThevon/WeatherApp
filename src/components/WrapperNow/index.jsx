@@ -1,6 +1,6 @@
 import './index.css';
 
-const WrapperNow = ( { data } ) => {
+const WrapperNow = ( { metrics, data } ) => {
     
 
     return (
@@ -9,23 +9,23 @@ const WrapperNow = ( { data } ) => {
             <ul className='now-temp'>
                 <li>
                     <p className="rain">Chance of Rain</p>
-                    {/* <p className="rain-value">{data.pop}</p> */}
+                    <p className="value">{data.pop}%</p>
                 </li>
                 <li>
                     <p className="humidity">Humidity</p>
-                    <p className="humidity-value">{data.main.humidity}</p>
+                    <p className="value">{data.main.humidity}%</p>
                 </li>
                 <li>
                     <p className="windspeed">Wind Speed</p>
-                    <p className="windspeed-value">{data.wind.speed}</p>
+                    <p className="value">{data.wind.speed}{metrics ? ' km/h' : ' mph'}</p>
                 </li>
                 <li>
                     <p className="visibility">Visibility</p>
-                    <p className="visibility-value">{data.visibility}</p>
+                    <p className="value">{data.visibility} km</p>
                 </li>
                 <li>
                     <p className="pressure">Pressure</p>
-                    <p className="pressure-value">{data.main.pressure}</p>
+                    <p className="value">{data.main.pressure} hPa</p>
                 </li>
             </ul>
         </section>

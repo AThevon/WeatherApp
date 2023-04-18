@@ -1,9 +1,9 @@
 import './index.css';
 
-const BtnUnits = () => {
+const BtnUnits = ( { metrics, handleClick } ) => {
     return (
         <div className="btn-units">
-            <button>°C / °F</button>
+            <button className={metrics} onClick={handleClick}>°C <span>°F</span></button>
         </div>
     );
 }
