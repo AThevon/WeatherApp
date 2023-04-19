@@ -37,12 +37,11 @@ const Wrapper = ( { datas, isLoading, error, metrics } ) => {
                                         </li>
                                     )
                                 })}
-
                             </ul>
                         )}
             </section>
             { datas && <WrapperNow metrics={metrics} data={datas.list[0]} />}
-            { datas && <WrapperWeekly datas={datas}/>}
+            { datas && <WrapperWeekly metrics={metrics} datas={datas}/>}
         </>
     )
 }

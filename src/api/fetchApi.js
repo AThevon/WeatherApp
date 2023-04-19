@@ -14,13 +14,4 @@ export async function fetchApi ( city, units ) {
     }
 };
 
-export async function fetchApiDaily ( city ) {
-    const url = `${apiUrl}forecast?q=${city}&appid=${apiKey}&units=metric`;
-    try {
-        const response = await axios.get(url);
-        return response.data;
-    }
-    catch (error) {
-        console.log(error);
-    }
-};
+

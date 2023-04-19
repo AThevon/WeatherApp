@@ -8,6 +8,7 @@ import Wrapper from './components/Wrapper';
 function App() {
 
   const [metrics, setMetrics] = useState(true);
+  
   const [datas, setDatas] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,7 +21,7 @@ function App() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const result = await fetchApi(search, metrics ? 'metric' : 'imperial');
+        const result = await fetchApi(search ? search : 'Paris', metrics ? 'metric' : 'imperial');
         setDatas(result);
       } catch (err) {
         setError(err);
